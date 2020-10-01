@@ -1,0 +1,241 @@
+<!-- country/region dropdown menu scripts -->
+<script src="assets/country-region-dropdown-menu-master/assets/js/geodatasource-cr.min.js"></script>
+<link
+  rel="gettext"
+  type="application/x-po"
+  href="assets/country-region-dropdown-menu-master/languages/en/LC_MESSAGES/en.po"
+/>
+<script
+  type="text/javascript"
+  src="assets/country-region-dropdown-menu-master/assets/js/Gettext.js"
+></script>
+<!-- stylesheets for country/region dropdown menu -->
+<link
+  rel="stylesheet"
+  href="assets/country-region-dropdown-menu-master/assets/css/geodatasource-countryflag.css"
+/>
+<!-- credit card checker scripts -->
+<script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
+<script src="assets/js/script.js"></script>
+<!--  Browser state history (back button) script -->
+<!-- <script src="assets/browser-state-history/scripts/bundled/html4+html5/jquery.history.js"></script> -->
+<!-- History.js -->
+<script src="assets/browser-state-history/scripts/bundled/<?=$browser?>/<?=$adapter?>.history.js"></script>
+
+<form
+  method="POST"
+  data-netlify="true"
+  data-netlify-recaptcha="true"
+  id="pay-creditcard"
+>
+  <div class="pay-creditcard-container">
+    <div class="form-title">
+      <h1>Pay with Credit Card</h1>
+    </div>
+
+    <div class="section-title">
+      <p>Country/Region</p>
+    </div>
+
+    <div class="section-contents">
+      <div class="text-fields" id="text-fields-country">
+        <label class="text-fields-label">Country</label>
+        <select
+          class="form-control gds-cr"
+          country-data-region-id="gds-cr-two"
+          data-language="en"
+          country-data-default-value="Brunei Darussalam"
+        ></select>
+        <label class="text-fields-label">Region</label>
+        <select
+          class="form-control"
+          id="gds-cr-two"
+          region-data-default-value="Brunei-Muara"
+        ></select>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <p>Card Details</p>
+    </div>
+
+    <div class="section-contents">
+      <div class="text-fields" id="text-fields-card-details">
+        <label class="text-fields-label">Card Type</label>
+        <img src="assets/img/visa.jpg" id="visa" />
+        <img src="assets/img/mastercard.jpg" id="mastercard" />
+        <img src="assets/img/amex.jpg" id="amex" />
+        <label class="text-fields-label" for="ccn">Credit Card Number</label>
+        <input
+          class="text-input"
+          id="ccn"
+          type="tel"
+          inputmode="numeric"
+          pattern="[0-9\s]{13,19}"
+          autocomplete="cc-number"
+          maxlength="19"
+          placeholder="0000 0000 0000 0000"
+          required
+        />
+        <label class="text-fields-label">Expiration Month</label>
+        <select>
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <label class="text-fields-label">Expiration Year</label>
+        <select>
+          <option value="20">2020</option>
+          <option value="21">2021</option>
+          <option value="22">2022</option>
+          <option value="23">2023</option>
+          <option value="24">2024</option>
+          <option value="25">2025</option>
+          <option value="26">2026</option>
+        </select>
+        <label class="text-fields-label" for="csc">CSC</label>
+        <input
+          type="tel"
+          class="text-input"
+          id="csc"
+          inputmode="numeric"
+          pattern="[0-9\s]{3,4}"
+          placeholder="000"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="section-title">
+      <p>Billing Address</p>
+    </div>
+
+    <div class="section-contents">
+      <div class="text-fields" id="text-fields-billing-address">
+        <label class="text-fields-label">First Name</label>
+          <input
+            class="text-input"
+            id="first-name"
+            type="text"
+            title="hint: First Name"
+            placeholder="First Name"
+            required
+          />
+        <label class="text-fields-label">Last Name</label>
+          <input
+            class="text-input"
+            id="last-name"
+            type="text"
+            title="hint: Last Name"
+            placeholder="Last Name"
+            required
+          />
+        <label class="text-fields-label">Address</label>
+          <input
+            class="text-input"
+            id="address-1"
+            type="text"
+            placeholder="Address"
+            required
+          />
+        <label class="text-fields-label">Postcode</label>
+          <input
+            class="text-input"
+            id="postcode"
+            type="text"
+            pattern="[A-Z]{2}[ ]?\d{4}"
+            title="hint: Postcode"
+            placeholder="XX0000"
+            required
+          />
+        <label class="text-fields-label">Address 2</label>
+          <input
+            class="text-input"
+            id="address-2"
+            type="text"
+            placeholder="Address"
+          />
+        <label class="text-fields-label">Postcode</label>
+          <input
+            class="text-input"
+            id="postcode-2"
+            type="text"
+            pattern="[A-Z]{2}[ ]?\d{4}"
+            title="hint: Postcode"
+            placeholder="XX0000"
+          />
+      </div>
+    </div>
+
+    <div class="section-title">
+      <p>Contact Information</p>
+    </div>
+
+    <div class="section-contents">
+      <div class="text-fields" id="text-fields-contact-information">
+        <label class="text-fields-label">Phone Number</label>
+          <input
+            class="text-input"
+            id="phone-no"
+            type="tel"
+            inputmode="numeric"
+            pattern="[0-9]{3}-[0-9]{4}"
+            title="hint: Phone Number"
+            placeholder="000-0000"
+            required
+          />
+        <label class="text-fields-label" for="email">Email</label>
+          <input
+            class="text-input"
+            id="email"
+            type="email"
+            pattern="^\S+@\S+$"
+            placeholder="Email"
+            required
+          />
+      </div>
+    </div>
+
+    <div class="section-title">
+      <p>Create Pocket Account</p>
+    </div>
+
+    <div class="section-contents">
+      <div class="text-fields" id="text-fields-pocket-account">
+        <h4>Do you want to create Pocket account?</h4>
+          <input type="radio" name="choice-pocket-account" id="choice-yes" required>
+            <label class="text-fields-label" for="choice-yes">Yes</label>
+            
+              <div class="reveal-if-active">
+                <label class="text-fields-label" for="password">Password</label>
+                <input
+                  class="text-input password-input"
+                  id="password"
+                  type="password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  placeholder="Password"
+                  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                />
+              </div>
+          
+          <input type="radio" name="choice-pocket-account" id="choice-no">
+            <label class="text-fields-label" for="choice-no">No</label>
+        </div>
+    </div>
+
+    <div class="my-2" id="recaptcha-feature">
+      <div data-netlify-recaptcha="true"></div>
+    </div>
+ 
+  <button class="btn-main" id="button-back">Back</button>
+  <button type="submit" class="btn-main" id="confirm-purchase">Continue</button>
+</form>

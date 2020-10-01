@@ -1,0 +1,25 @@
+<form
+  method="POST"
+  data-netlify="true"
+  data-netlify-recaptcha="true"
+  id="login-phone"
+>
+  <div class="text-fields">
+    <label class="text-fields-label" for="tel">Phone Number</label>
+    <input
+      class="text-input"
+      id="tel"
+      type="tel"
+      inputmode="numeric"
+      pattern="[0-9]{3}-[0-9]{4}"
+      title="hint: Phone Number"
+      placeholder="000-0000"
+    />
+    <div class="my-2">
+      <div data-netlify-recaptcha="true"></div>
+    </div>
+  </div>
+
+  <button class="btn-main" id="btn-back">Back</button>
+  <button type="submit" class="btn-main">Login</button>
+</form>

@@ -1,0 +1,43 @@
+<form
+  method="POST"
+  data-netlify="true"
+  data-netlify-recaptcha="true"
+  id="login-email"
+>
+  <div class="text-fields">
+    <label class="text-fields-label" for="email">Email</label>
+    <input
+      class="text-input"
+      id="email"
+      type="email"
+      pattern="^\S+@\S+$"
+      placeholder="Email"
+      name="email"
+      required
+    />
+    <label class="text-fields-label" for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      class="text-input password-input"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      placeholder="Password"
+      title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+      name="password"
+      required
+    />
+
+    <div class="my-2">
+      <div data-netlify-recaptcha="true"></div>
+    </div>
+  </div>
+  <button class="btn-main" id="btn-back">Back</button>
+  <button type="submit" class="btn-main">Login</button>
+</form>
+<ul>
+  <li class="py-1">
+    <a href="#" class="" id="forgot-password" data-target="forgot-password"
+      >Forgot Password?</a
+    >
+  </li>
+</ul>

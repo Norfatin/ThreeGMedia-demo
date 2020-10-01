@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- scripts -->
+      <!-- load jquery via CDN -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- loading ajax content script -->
+      <script src="assets/js/load_content.js"></script>
+      <!-- credit card scripts -->
+      <script src="assets/country-region-dropdown-menu-master/assets/js/geodatasource-cr.min.js"></script>
+      <link rel="gettext" type="application/x-po" href="assets/country-region-dropdown-menu-master/languages/en/LC_MESSAGES/en.po" />
+      <script type="text/javascript" src="assets/country-region-dropdown-menu-master/assets/js/Gettext.js"></script>
+      <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
+      <script src="assets/js/creditcard_checker.js"></script>
+      <!--  Browser state history (back button) script -->
+      <script src="assets/browser-state-history/scripts/bundled/html4+html5/jquery.history.js"></script>
+
+    <!-- stylesheets -->
+      <link rel="stylesheet" href="assets/country-region-dropdown-menu-master/assets/css/geodatasource-countryflag.css"/>
+      <script src="https://kit.fontawesome.com/b9f99602ca.js" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+      <link rel="stylesheet" href="assets/css/main.css" />
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <title>Demo Pocket | Payment</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="main-header">
+      <a href="https://pocket.com.bn/"><img src="assets/img/logo-header.png" alt="logo" id="logo"></a>
+    </header>
+
+    <!-- body -->
+    <section id="main-body">
+      
+      <div id="form-content" class="container my-3 py-1">
+        <div id="pay-pocket" >
+          <div class="form-title">
+            <h1>Pay with Pocket</h1>
+          </div>
+          <div class="section-contents">
+            <p>Choose login type:</p>
+            <ul>
+              <li class="py-1">
+                <a
+                  href="#"
+                  class="btn-light"
+                  id="btn-login-phone"
+                  data-target="login-phone"
+                  >Phone #</a
+                >
+              </li>
+              <li class="py-1">
+                <a
+                  href="#"
+                  class="btn-light"
+                  id="btn-login-email"
+                  data-target="login-email"
+                  >Email</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="login-form" class="container">
+            
+          </div>
+        </div>
+        <div class="container">
+          <div class="horizontal-line">
+            <h2>OR</h2>
+          </div>
+        </div>
+        <div id="pay-creditcard">
+          <ul>
+            <li class="py-1">
+              <a
+                href="#"
+                class="btn-light"
+                id="btn-pay-creditcard"
+                data-target="pay-creditcard"
+                >Pay with Credit Card</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="main-footer">
+      <div class="footer-content container">
+        <div id="link-pocket">
+          <p>
+            Images taken from
+            <a href="https://pocket.com.bn/"> POCKET</a>
+            <br />
+            Developed for
+            <a href="https://www.threegmedia.com/home/">
+            <img
+              src="assets/img/3gm-main-logo.png"
+              alt="3gm-logo"
+              id="3gm-logo"
+            />
+          </p></a>
+        </div>
+        <div id="link-norfatin">
+          <div class="social">
+            <h6>View my profile on</h6>
+            <a href="https://linkedin.com/in/norfatinismat/" target="_blank"
+              ><i class="fab fa-linkedin fa-2x"></i
+            ></a>
+            <a href="https://github.com/Norfatin/" target="_blank"
+              ><i class="fab fa-github fa-2x"></i
+            ></a>
+          </div>
+          <p>
+            Webform designed by
+            <a href="mailto: i.norfatin@gmail.com"> Norfatin Haji Ismat</a> 2020
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
