@@ -12,8 +12,10 @@
       <script src="assets/country-region-dropdown-menu-master/assets/js/geodatasource-cr.min.js"></script>
       <link rel="gettext" type="application/x-po" href="assets/country-region-dropdown-menu-master/languages/en/LC_MESSAGES/en.po" />
       <script type="text/javascript" src="assets/country-region-dropdown-menu-master/assets/js/Gettext.js"></script>
-      <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
-      <script src="assets/js/creditcard_checker.js"></script>
+
+<script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
+<!-- <script src="assets/js/payform.js"></script> -->
+<script src="assets/js/creditcard_checker.js"></script>
       <!--  Browser state history (back button) script -->
       <script src="assets/browser-state-history/scripts/bundled/html4+html5/jquery.history.js"></script>
 
@@ -28,19 +30,21 @@
   <body>
     <!-- header -->
     <header id="main-header">
+      <div id="main-header-container" class="container my-3 py-1">
       <a href="https://pocket.com.bn/"><img src="assets/img/logo-header.png" alt="logo" id="logo"></a>
-    </header>
+    </div>
+  </header>
 
     <!-- body -->
     <section id="main-body">
       
-      <div id="form-content" class="container my-3 py-1">
+      <div id="form-content" class="container my-4 py-4">
         <div id="pay-pocket" >
-          <div class="form-title">
+          <div class="form-title py-1">
             <h1>Pay with Pocket</h1>
           </div>
-          <div class="section-contents">
-            <p>Choose login type:</p>
+          <div class="section-contents" id="pay-pocket-section-contents">
+            <p>Choose preferred login type:</p>
             <ul>
               <li class="py-1">
                 <a
@@ -62,11 +66,9 @@
               </li>
             </ul>
           </div>
-          <div id="login-form" class="container">
-            
-          </div>
+          <div id="login-form" class="container"></div>
         </div>
-        <div class="container">
+        <div class="container my-1">
           <div class="horizontal-line">
             <h2>OR</h2>
           </div>
@@ -96,6 +98,7 @@
             <a href="https://pocket.com.bn/"> POCKET</a>
             <br />
             Developed for
+            <br />
             <a href="https://www.threegmedia.com/home/">
             <img
               src="assets/img/3gm-main-logo.png"

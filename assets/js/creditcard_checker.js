@@ -44,14 +44,15 @@ $(function () {
     var isCvvValid = $.payform.validateCardCVC(CVV.val());
 
     if (owner.val().length < 5) {
-      alert("Please enter correct owner name");
+      alert("Please enter full name on the card");
     } else if (!isCardValid) {
-      alert("Please enter correct card number");
+      alert("Please check the card number");
     } else if (!isCvvValid) {
       alert("Please enter correct CVV");
     } else {
-      // Insert php here for payment function
-      alert("Credit Card is ready for payment.");
+      //show status of success with validation
+      alert("Credit Card is validated. Please complete the form to continue.");
+      // Insert php here to proceed for payment function
     }
   });
 });

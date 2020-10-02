@@ -16,12 +16,15 @@
 />
 <!-- credit card checker scripts -->
 <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
-<script src="assets/js/script.js"></script>
+<!-- <script src="assets/js/payform.min.js"></script> -->
+<script src="assets/js/creditcard_checker.js"></script>
 <!--  Browser state history (back button) script -->
 <!-- <script src="assets/browser-state-history/scripts/bundled/html4+html5/jquery.history.js"></script> -->
 <!-- History.js -->
 <script src="assets/browser-state-history/scripts/bundled/<?=$browser?>/<?=$adapter?>.history.js"></script>
 
+
+<div id="form-creditcard-container" class="creditCardForm">
 <form
   method="POST"
   data-netlify="true"
@@ -60,23 +63,29 @@
     </div>
 
     <div class="section-contents">
+      <div class="payment">
       <div class="text-fields" id="text-fields-card-details">
+        <div class="form-group" id="credit_cards">
         <label class="text-fields-label">Card Type</label>
-        <img src="assets/img/visa.jpg" id="visa" />
-        <img src="assets/img/mastercard.jpg" id="mastercard" />
-        <img src="assets/img/amex.jpg" id="amex" />
-        <label class="text-fields-label" for="ccn">Credit Card Number</label>
-        <input
-          class="text-input"
-          id="ccn"
-          type="tel"
-          inputmode="numeric"
-          pattern="[0-9\s]{13,19}"
-          autocomplete="cc-number"
-          maxlength="19"
-          placeholder="0000 0000 0000 0000"
-          required
-        />
+          <img src="assets/img/visa.jpg" id="visa" />
+          <img src="assets/img/mastercard.jpg" id="mastercard" />
+          <img src="assets/img/amex.jpg" id="amex" />
+        </div>
+        <div class="form-group" id="card-number-field">
+          <label class="text-fields-label" for="cardNumber">Credit Card Number</label>
+          <input
+            class="text-input"
+            id="cardNumber"
+            type="tel"
+            inputmode="numeric"
+            pattern="[0-9\s]{13,19}"
+            autocomplete="cc-number"
+            maxlength="19"
+            placeholder="0000 0000 0000 0000"
+            required
+          />
+        </div>
+        <div class="form-group" id="expiration-date">
         <label class="text-fields-label">Expiration Month</label>
         <select>
           <option value="01">January</option>
@@ -91,7 +100,7 @@
           <option value="10">October</option>
           <option value="11">November</option>
           <option value="12">December</option>
-        </select>
+        </select>    
         <label class="text-fields-label">Expiration Year</label>
         <select>
           <option value="20">2020</option>
@@ -102,18 +111,20 @@
           <option value="25">2025</option>
           <option value="26">2026</option>
         </select>
-        <label class="text-fields-label" for="csc">CSC</label>
+      </div>
+      <div class="form-group CVV">
+        <label class="text-fields-label" for="cvv">CSC</label>
         <input
           type="tel"
           class="text-input"
-          id="csc"
+          id="cvv"
           inputmode="numeric"
           pattern="[0-9\s]{3,4}"
           placeholder="000"
           required
         />
       </div>
-    </div>
+    </div></div>
 
     <div class="section-title">
       <p>Billing Address</p>
@@ -124,7 +135,7 @@
         <label class="text-fields-label">First Name</label>
           <input
             class="text-input"
-            id="first-name"
+            id="owner" 
             type="text"
             title="hint: First Name"
             placeholder="First Name"
@@ -239,3 +250,4 @@
   <button class="btn-main" id="button-back">Back</button>
   <button type="submit" class="btn-main" id="confirm-purchase">Continue</button>
 </form>
+</div>
